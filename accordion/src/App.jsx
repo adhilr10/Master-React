@@ -1,10 +1,15 @@
-import Accordion from "./components/accordion";
-import {staticAccordionData, AccordionData} from "./components/accordionData";
+import Accordion from "./components/accordion/accordion";
+import {
+  staticAccordionData,
+  AccordionData,
+} from "./components/accordion/accordionData";
+import StarRating from "./components/star/starRating";
 
 function App() {
   const data = AccordionData();
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-900 text-black">
+      <StarRating totalStars={6} />
       {staticAccordionData.map((item, i) => (
         <Accordion key={i} {...item} />
       ))}
